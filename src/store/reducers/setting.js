@@ -1,7 +1,8 @@
 import { setItemAction, resetItemAction } from '../../shared/commonUpdateState';
 const initialState = {
-    user: null,
-    userList: [],
+    setting: null,
+    settingList: [
+    ],
     action: {
         type: null,
         isSuccess: false,
@@ -13,10 +14,10 @@ const initialState = {
 export default function (state = initialState, action) {
     const { type, payload } = action;
     switch (type) {
-        case 'SET_USER_ACTION':
-            return setItemAction(state, payload, 'USER');
+        case 'SET_SETTING_ACTION':
+            return setItemAction(state, payload, 'SETTING');
         case 'RESET_USER_ACTION':
-            return resetItemAction(state, 'USER');
+            return resetItemAction(state, 'SETTING');
         default: return state
     }
 }

@@ -1,7 +1,9 @@
 import { setItemAction, resetItemAction } from '../../shared/commonUpdateState';
+import logo from '../../assets/img/brand/logoemail.png';
+
 const initialState = {
-    user: null,
-    userList: [],
+    email: null,
+    emailList: [],
     action: {
         type: null,
         isSuccess: false,
@@ -13,10 +15,10 @@ const initialState = {
 export default function (state = initialState, action) {
     const { type, payload } = action;
     switch (type) {
-        case 'SET_USER_ACTION':
-            return setItemAction(state, payload, 'USER');
-        case 'RESET_USER_ACTION':
-            return resetItemAction(state, 'USER');
+        case 'SET_EMAIL_ACTION':
+            return setItemAction(state, payload, 'EMAIL');
+        case 'RESET_EMAIL_ACTION':
+            return resetItemAction(state, 'EMAIL');
         default: return state
     }
 }
